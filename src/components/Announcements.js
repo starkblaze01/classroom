@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactModal from 'react-modal';
-import { Link } from 'react-router-dom';
-import database from '../firebase/firebase';
+import { database } from '../firebase/firebase';
+import { history } from '../routes/AppRouter';
 
+import Background from './Background';
+import Header from './Header';
 import Announcement from './Announcement';
-import TitleBar from './TitleBar';
 
 import '../styles/Announcements.css';
 
@@ -14,7 +15,11 @@ class Announcements extends React.Component {
 		super();
 
 		this.state = {
-			announcements: [],
+			allAnnouncements: [],
+			dbSubjectKey: '',
+			subjectName: '',
+			subjectCode: '',
+			userType: '',
 			showModal: false
 		}
 
@@ -27,18 +32,41 @@ class Announcements extends React.Component {
 	}
 
 	componentDidMount() {
-		let announcements = [];
+		let allAnnouncements = [];
+		const subIndex = history.location.search.slice(1, history.location.search.length).split('=')[1];
 
-		database.ref('announcements').on('value', (snapshot) => {
-			snapshot.forEach((childSnapshot) => {
-				announcements.push({
-					_id: childSnapshot.key,
-					...childSnapshot.val()
-				});
+		database.ref('users/' + this.props.dbUserKey + '/userSubjects').on('value', (subjects) => {
+			let currentIndex = 0;
+			subjects.forEach((subject) => {
+				if (currentIndex == subIndex) {
+					database.ref('subjects/' + subject.val().dbSubjectKey + '/announcements').on('value', (announcements) => {
+						announcements.forEach((announcement) => {
+							allAnnouncements.push({
+								announcementID: announcement.key,
+								...announcement.val()
+							});
+						});
+						allAnnouncements.reverse();
+						database.ref('subjects/' + subject.val().dbSubjectKey).on('value', (currentSubject) => {
+							this.setState({
+								subjectName: currentSubject.val().subjectName,
+								subjectCode: currentSubject.val().subjectCode
+							});
+						});
+						this.setState({
+							allAnnouncements,
+							dbSubjectKey: subject.val().dbSubjectKey
+						});
+						allAnnouncements = [];
+					});
+				}
+				currentIndex++;
 			});
-			announcements.reverse();
-			this.setState({ announcements });
-			announcements = [];
+			currentIndex = 0;
+		});
+
+		database.ref('users/' + this.props.dbUserKey).once('value').then((user) => {
+			this.setState({ userType: user.val().userType });
 		});
 	}
 
@@ -50,18 +78,9 @@ class Announcements extends React.Component {
 		this.setState({ showModal: false });
 	}
 
-	displayAnnouncements() {
-		return this.state.announcements.map((announcement, index) => {
-			return (
-				<Announcement announcement={announcement} key={index} index={index} editAnnouncement={this.editAnnouncement} deleteAnnouncement={this.deleteAnnouncement} />
-			);
-		});
-	}
-
 	addAnnouncement(event) {
 		event.preventDefault();
-
-		database.ref('announcements').push({
+		database.ref('subjects/' + this.state.dbSubjectKey + '/announcements').push({
 			title: this.refs.title.value,
 			description: this.refs.description.value
 		});
@@ -70,34 +89,52 @@ class Announcements extends React.Component {
 	}
 
 	editAnnouncement(updatedAnnouncement, index) {
-		let key = this.state.announcements[index]._id;
-		database.ref('announcements/' + key).set(updatedAnnouncement);
+		const announcementID = this.state.allAnnouncements[index].announcementID;
+		database.ref('subjects/' + this.state.dbSubjectKey + '/announcements/' + announcementID).set(updatedAnnouncement);
 	}
 
 	deleteAnnouncement(announcementIndex) {
-		let key = this.state.announcements[announcementIndex]._id;
-		database.ref('announcements/' + key).remove();
+		const announcementID = this.state.allAnnouncements[announcementIndex].announcementID;
+		database.ref('subjects/' + this.state.dbSubjectKey + '/announcements/' + announcementID).remove();
+	}
+
+	displayAnnouncements() {
+		return this.state.allAnnouncements.map((announcement, index) => {
+			return (
+				<Announcement
+					announcement={announcement}
+					key={index}
+					index={index}
+					editAnnouncement={this.editAnnouncement}
+					deleteAnnouncement={this.deleteAnnouncement}
+					userType={this.state.userType}
+				/>
+			);
+		});
 	}
 
 	render() {
+		let addAnnouncements = this.state.userType === 'Teacher' ? <button onClick={this.handleOpenModal} className="new-announcement-button">+</button> : <div></div>;
 		return (
-			<div className="announcements">
-				<TitleBar title="Announcements" />
-				<button className="back-to-main-page-button"><Link to="/">&#8678; Back</Link></button>
-				{ this.displayAnnouncements() }
-				<div className="new-announcement-div">
-					<button onClick={this.handleOpenModal} className="new-announcement-button">+</button>
-					<ReactModal isOpen={this.state.showModal} contentLabel="Add Announcement" ariaHideApp={false} className="new-announcement-modal">
-						<form className="new-announcement-form" onSubmit={this.addAnnouncement}>
-							<div>Announcement Title</div>
-							<textarea type="text" className="new-announcement-title" ref="title"></textarea>
-							<div>Announcement Description</div>
-							<textarea type="text" className="new-announcement-description" ref="description"></textarea>
-							<br />
-							<input type="submit" value="Add Announcement" className="add-announcement-button" />
-							<button onClick={this.handleCloseModal} className="close-modal-button">Cancel</button>
-						</form>
-					</ReactModal>
+			<div id="announcements-page">
+				<Background />
+				<div className="announcements">
+					<Header subjectCode={this.state.subjectCode} subjectName={this.state.subjectName} />
+					{ this.displayAnnouncements() }
+					<div className="new-announcement-div">
+						{ addAnnouncements }
+						<ReactModal isOpen={this.state.showModal} contentLabel="Add Announcement" ariaHideApp={false} className="new-announcement-modal">
+							<form className="new-announcement-form" onSubmit={this.addAnnouncement}>
+								<div>Announcement Title</div>
+								<textarea type="text" className="new-announcement-title" ref="title"></textarea>
+								<div>Announcement Description</div>
+								<textarea type="text" className="new-announcement-description" ref="description"></textarea>
+								<br />
+								<input type="submit" value="Add Announcement" className="add-announcement-button" />
+								<button onClick={this.handleCloseModal} className="close-modal-button">Cancel</button>
+							</form>
+						</ReactModal>
+					</div>
 				</div>
 			</div>
 		);

@@ -1,0 +1,164 @@
+#assignment-page {
+	color: white;
+}
+
+.assignment-page-div {
+	position: absolute;
+	width: 1426px;
+}
+
+.assignment {
+	margin: 10px;
+	padding: 5px;
+	font-family: 'Nunito';
+	border: 1px solid white;
+	box-shadow: 1px 1px 1px white;
+	min-height: 200px;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+}
+
+.assignment-info {
+	padding: 5px;
+	margin: 5px;
+}
+
+.assignment-title {
+	padding: 5px;
+	font-size: 25px;
+	border-bottom: 1px solid white;
+	word-wrap: break-word;
+}
+
+.submission-status {
+	padding: 5px;
+	font-size: 15px;
+}
+
+.submitted-on {
+	padding: 5px;
+	font-size: 15px;
+}
+
+.assignment-description {
+	padding: 5px;
+	font-family: 'Nunito';
+	white-space: pre-wrap;
+}
+
+.assignment-file {
+	min-height: 50px;
+	width: 500px;
+	line-height: 50px;
+	padding-left: 5px;
+	border: 1px solid white;
+	margin: 5px;
+	word-wrap: break-word;
+}
+
+.assignment-file-name {
+	width: 400px;
+	display: inline-block;
+}
+
+.assignment-file-view-button {
+	cursor: pointer;
+	margin-left: 10px;
+	height: 30px;
+	outline: none;
+	font-family: 'Nunito';
+	border: 1px solid #BF00B8;
+	background-color: transparent;
+	color: #BF00B8;
+	transition-duration: 0.7s;
+}
+
+.assignment-file-view-button:hover {
+	background-color: #BF00B8;
+	color: white;
+}
+
+.submission-date {
+	margin: 5px;
+	font-size: 13px;
+	color: #AAAAAA;
+}
+
+.assignment > button {
+	cursor: pointer;
+	padding: 5px;
+	font-family: 'Nunito';
+	border: 1px solid #0060D7;
+	outline: none;
+	color: #0060D7;
+	background-color: transparent;
+	margin: 5px;
+	transition-duration: 0.7s;
+}
+
+.assignment > button:hover {
+	background-color: #0060D7;
+	color: white;
+}
+
+.submission-info {
+	margin: 5px;
+	padding: 5px;
+}
+
+.submission-title {
+	border-bottom: 1px solid white;
+	font-size: 17px;
+	margin: 5px;
+}
+
+.submit-button {
+	cursor: pointer;
+	margin-left: 15px;
+	padding: 7px;
+	font-family: 'Nunito';
+	font-size: 15px;
+	outline: none;
+	color: #0AA100;
+	border: 1px solid #0AA100;
+	background-color: transparent;
+	transition-duration: 0.7s;
+}
+
+.submit-button:hover {
+	background-color: #0AA100;
+	color: white;
+}
+
+.assignment-submitted {
+	color: #18B313;
+}
+
+.assignment-done-late {
+	color: #E7740A;
+}
+
+.assignment-missing {
+	color: #E11111;
+}
+
+.assignment-pending {
+	color: #AAAAAA;
+}
+
+.student-submission-list {
+	font-family: 'Nunito';
+}
+
+.student-list-title {
+	text-align: center;
+	font-size: 25px;
+}
+
+.student {
+	font-size: 15px;
+	border-bottom: 1px solid white;
+	width: 45%;
+	margin: 10px;
+	padding: 10px;
+}

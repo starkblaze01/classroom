@@ -1,17 +1,18 @@
 .announcement {
 	clear: both;
-	margin: 10px;
-	box-shadow: 1px 1px 1px #0060D7;
+	width: 1400px;
+	border-bottom: 1px solid #0060D7;
+	margin-bottom: 5px;
+	margin-left: 2px;
 }
 
 .announcement-title {
-	background-color: #0060D7;
 	color: white;
-	text-align: center;
 	font-family: 'Nunito';
-	font-size: 17px;
+	font-size: 22px;
+	text-decoration: underline;
 	margin: 5px 0px;
-	padding: 5px;
+	padding: 5px 10px;
 	word-wrap: break-word;
 }
 
@@ -20,17 +21,18 @@
 	min-height: 75px;
 	padding: 5px;
 	font-family: 'Nunito';
+	white-space: pre-wrap;
 	word-wrap: break-word;
 }
 
 .edit-announcement-button {
 	cursor: pointer;
 	margin-bottom: 5px;
-	margin-right: 10px;
+	margin: 10px;
 	border: none;
 	outline: none;
 	font-family: 'Nunito';
-	background-color: white;
+	background-color: transparent;
 	color: #0060D7;
 	border: 1px solid #0060D7;
 	border-radius: 2px;
@@ -50,7 +52,7 @@
 	border: none;
 	outline: none;
 	font-family: 'Nunito';
-	background-color: white;
+	background-color: transparent;
 	color: #DC0000;
 	border: 1px solid #DC0000;
 	border-radius: 2px;
@@ -94,7 +96,7 @@
 }
 
 .edit-announcement-form > textarea:focus {
-	border: 1.2px solid #0060D7;
+	border: 1px solid #0060D7;
 }
 
 .edit-announcement-title {
@@ -109,18 +111,22 @@
 	font-size: 15px;
 }
 
-.update-announcement-button {
+.update-announcement-button, .close-modal-button {
 	cursor: pointer;
 	margin: 15px;
 	width: 25%;
 	height: 30px;
 	border: none;
 	outline: none;
+	border-radius: 2px;
 	background-color: white;
+	font-family: 'Nunito';
+	transition-duration: 0.7s;
+}
+
+.update-announcement-button {
 	color: #0AA100;
 	border: 1px solid #0AA100;
-	border-radius: 2px;
-	transition-duration: 0.7s;
 }
 
 .update-announcement-button:hover {
@@ -129,18 +135,8 @@
 }
 
 .close-modal-button {
-	cursor: pointer;
-	margin: 15px;
-	border: none;
-	outline: none;
-	font-family: 'Nunito';
-	background-color: white;
 	color: #DC0000;
 	border: 1px solid #DC0000;
-	border-radius: 2px;
-	height: 30px;
-	width: 25%;
-	transition-duration: 0.7s;
 }
 
 .close-modal-button:hover {

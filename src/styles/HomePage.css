@@ -1,0 +1,131 @@
+#home-page {
+	height: 732px;
+}
+
+.home {
+	position: absolute;
+	width: 1426px;
+}
+
+.home-page-header {
+	text-align: center;
+	font-family: 'Nunito';
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	color: white;
+	background-color: crimson;
+}
+
+.home-page-header-title {
+	font-size: 25px;
+}
+
+.home-page-logout {
+	float: right;
+	height: 40px;
+	width: 85px;
+	margin: 10px 15px;
+	font-size: 15px;
+	font-family: 'Nunito';
+}
+
+.add-subject-div {
+	border: 1px solid white;
+	width: 300px;
+	height: 200px;
+	font-family: 'Nunito';
+	padding: 5px;
+	margin: 5px;
+	float: left;
+	cursor: pointer;
+	box-shadow: 1px 1px 1px white;
+}
+
+.add-subject-div-button {
+	text-align: center;
+	font-size: 35px;
+	line-height: 150px;
+	height: 75%;
+	opacity: 0.8;
+	border-bottom: 1px solid white;
+	color: white;
+}
+
+.add-subject-label {
+	text-align: center;
+	padding: 15px 5px;
+	color: white;
+}
+
+.add-subject-modal {
+	margin: auto;
+	height: 350px;
+	width: 550px;
+	transform: translateY(50%);
+	background-color: white;
+	outline: none;
+	border: 1px solid white;
+}
+
+.add-subject-form {
+	font-family: 'Nunito';
+}
+
+.add-subject-form > div {
+	margin: 15px 20px;
+	padding: 5px;
+}
+
+.new-subject-name, .new-subject-code {
+	margin: 5px 25px;
+	outline: none;
+	padding: 5px;
+	border: 1px solid grey;
+	border-radius: 2px;
+	width: 300px;
+	height: 30px;
+	font-family: 'Nunito';
+	font-size: 15px;
+}
+
+.new-subject-name:invalid, .new-subject-code:invalid {
+	border-left: 2px solid red;
+}
+
+.new-subject-name:valid, .new-subject-code:valid {
+	border-left: 2px solid limegreen;
+}
+
+.add-subject-button, .close-modal-button {
+	cursor: pointer;
+	margin-top: 25px;
+	margin-left: 25px;
+	width: 25%;
+	height: 35px;
+	border: none;
+	outline: none;
+	border-radius: 2px;
+	background-color: white;
+	transition-duration: 0.7s;
+}
+
+.add-subject-button {
+	color: #0AA100;
+	border: 1px solid #0AA100;
+}
+
+.add-subject-button:hover {
+	background-color: #0AA100;
+	color: white;
+}
+
+.close-modal-button {
+	color: #DC0000;
+	border: 1px solid #DC0000;
+}
+
+.close-modal-button:hover {
+	background-color: #DC0000;
+	color: white;
+}

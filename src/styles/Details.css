@@ -1,0 +1,89 @@
+#details-page {
+	height: 732px;
+}
+
+.details {
+	position: absolute;
+	width: 500px;
+	border: 1px solid white;
+	color: white;
+	padding: 15px;
+	margin-left: 450px;
+	margin-top: 150px;
+	font-family: 'Nunito';
+}
+
+.details-title {
+	text-align: center;
+	font-size: 35px;
+	border-bottom: 1px solid white;
+}
+
+.details-form {
+	margin: 15px;
+	padding: 5px;
+}
+
+.details-form div {
+	margin-bottom: 15px;
+}
+
+.details-form > div > label {
+	margin-bottom: 15px;
+	margin-right: 20px;
+}
+
+.details-name, .details-id {
+	width: 310px;
+	height: 30px;
+	margin-bottom: 15px;
+	outline: none;
+	font-family: 'Nunito';
+	font-size: 15px;
+	border: 1px solid grey;
+	padding-left: 5px;
+}
+
+.details-name:invalid, .details-id:invalid {
+	border-left: 2px solid red;
+}
+
+.details-name:valid, .details-id:valid {
+	border-left: 2px solid limegreen;
+}
+
+.details-branch {
+	outline: none;
+}
+
+.details-submit, .details-cancel-button {
+	margin-right: 10px;
+	margin-top: 10px;
+	height: 35px;
+	width: 150px;
+	outline: none;
+	background-color: transparent;
+	cursor: pointer;
+	font-family: 'Nunito';
+	transition-duration: 0.7s;
+}
+
+.details-submit {
+	border: 1.5px solid #0AA100;
+	color: #0AA100;
+}
+
+.details-submit:hover {
+	background-color: #0AA100;
+	color: white;
+}
+
+.details-cancel-button {
+	border: 1.5px solid #DC0000;
+	color: #DC0000;
+}
+
+.details-cancel-button:hover {
+	background-color: #DC0000;
+	color: white;
+}

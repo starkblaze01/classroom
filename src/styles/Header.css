@@ -1,0 +1,41 @@
+.header {
+	text-align: center;
+	font-family: 'Nunito';
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	margin-bottom: 10px;
+	color: white;
+	background-color: crimson;
+}
+
+.back-button, .home-button, .logout-button {
+	cursor: pointer;
+	background-color: white;
+	border: 1px solid white;
+	outline: none;
+	color: crimson;
+	height: 40px;
+	width: 85px;
+	margin: 10px 5px;
+	font-size: 15px;
+	font-family: 'Nunito';
+	transition-duration: 0.7s;
+}
+
+.back-button:hover, .home-button:hover, .logout-button:hover {
+	background-color: crimson;
+	color: white;
+}
+
+.back-button, .home-button {
+	float: left;
+}
+
+.logout-button {
+	float: right;
+}
+
+.header > .subject-name {
+	font-size: 25px;
+}

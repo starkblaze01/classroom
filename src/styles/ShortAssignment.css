@@ -1,0 +1,17 @@
+.short-assignment {
+	cursor: pointer;
+	font-family: 'Nunito';
+	padding: 5px;
+	color: white;
+	border-bottom: 1px solid #AC19A6;
+	margin: 5px;
+}
+
+.short-assignment-number {
+	margin: 2px;
+}
+
+.short-assignment-due {
+	margin: 2px;
+	font-size: 12px;
+}

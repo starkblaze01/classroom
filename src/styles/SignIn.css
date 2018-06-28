@@ -1,0 +1,73 @@
+#sign-in-page {
+	height: 732px;
+}
+
+.sign-in {
+	position: absolute;
+	width: 500px;
+	height: 300px;
+	border: 1px solid white;
+	padding: 15px;
+	margin-left: 450px;
+	margin-top: 150px;
+	font-family: 'Nunito';
+	color: white;
+}
+
+.sign-in-title {
+	text-align: center;
+	font-size: 35px;
+	border-bottom: 1px solid white;
+}
+
+.sign-in-form {
+	position: absolute;
+	margin: 15px;
+	padding: 5px;
+}
+
+.sign-in-form > div {
+	margin-bottom: 15px;
+}
+
+.sign-in-email, .sign-in-password {
+	width: 310px;
+	height: 30px;
+	margin-bottom: 15px;
+	outline: none;
+	font-family: 'Nunito';
+	font-size: 15px;
+	border: 1px solid grey;
+	padding-left: 2px;
+}
+
+.sign-in-button, .sign-in-cancel-button {
+	margin-right: 10px;
+	height: 35px;
+	width: 150px;
+	outline: none;
+	background-color: transparent;
+	cursor: pointer;
+	font-family: 'Nunito';
+	transition-duration: 0.7s;
+}
+
+.sign-in-button {
+	border: 1px solid #0AA100;
+	color: #0AA100;
+}
+
+.sign-in-button:hover {
+	background-color: #0AA100;
+	color: white;
+}
+
+.sign-in-cancel-button {
+	border: 1px solid #DC0000;
+	color: #DC0000;
+}
+
+.sign-in-cancel-button:hover {
+	background-color: #DC0000;
+	color: white;
+}

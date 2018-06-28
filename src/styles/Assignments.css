@@ -1,0 +1,113 @@
+.assignments {
+	font-family: 'Nunito';
+	width: 550px;
+	max-height: 800px;
+	margin-top: 5px;
+	padding: 5px;
+	border: 1px solid white;
+	box-shadow: 1px 1px 1px white;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.assignments-title {
+	font-size: 25px;
+	text-align: center;
+	border-bottom: 1px solid white;
+}
+
+.new-assignment-button {
+	margin: 5px;
+	width: 98%;
+	height: 40px;
+	background-color: transparent;
+	border: 1px solid #008EC9;
+	border-radius: 2px;
+	color: #008EC9;
+	cursor: pointer;
+	outline: none;
+	transition-duration: 0.7s;
+}
+
+.new-assignment-button:hover {
+	background-color: #008EC9;
+	color: white;
+}
+
+.new-assignment-modal {
+	font-family: 'Nunito';
+	margin: auto;
+	height: 530px;
+	width: 900px;
+	transform: translateY(10%);
+	background-color: white;
+	outline: none;
+	border: 1px solid white;
+}
+
+.new-assignment-form > div {
+	margin: 5px 15px;
+	padding: 5px;
+}
+
+.new-assignment-form > textarea {
+	border: 1px solid grey;
+	font-family: 'Nunito';
+	margin: 5px 15px;
+	padding: 5px;
+	resize: none;
+	outline: none;
+	word-wrap: break-word;
+}
+
+.new-assignment-form > textarea:focus {
+	border: 1px solid #0060D7;
+}
+
+.new-assignment-title {
+	width: 850px;
+	height: 25px;
+	font-size: 15px;
+}
+
+.new-assignment-description {
+	width: 850px;
+	min-height: 75px;
+	font-size: 15px;
+}
+
+.uploaded-file-name {
+	margin: 15px;
+}
+
+.date-picker {
+	cursor: pointer;
+	outline: none;
+	width: 200px;
+	height: 20px;
+	border: 1px solid grey;
+	padding: 5px;
+	font-family: 'Nunito';
+}
+
+.react-datepicker__time-list {
+	transform: translateX(-30px);
+}
+
+.create-assignment-button {
+	cursor: pointer;
+	font-family: 'Nunito';
+	margin: 20px;
+	padding: 7px;
+	outline: none;
+	color: #0AA100;
+	border: 1px solid #0AA100;
+	background-color: white;
+	transition-duration: 0.7s;
+}
+
+.create-assignment-button:hover {
+	background-color: #0AA100;
+	color: white;
+}
+

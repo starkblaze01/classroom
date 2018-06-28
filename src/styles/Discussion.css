@@ -1,0 +1,104 @@
+.discussion {
+	width: 1426px;
+	position: absolute;
+	color: white;
+	font-family: 'Nunito';
+}
+
+.discussion-title {
+	text-align: center;
+	font-size: 40px;
+}
+
+.discussion-creator, .discussion-created-on {
+	font-size: 15px;
+	text-align: right;
+	padding-right: 15px;
+}
+
+.close-discussion-button {
+	cursor: pointer;
+	margin: 5px;
+	padding: 7px;
+	border: 1px solid #DC0000;
+	background-color: transparent;
+	color: #DC0000;
+	transition-duration: 0.7s;
+}
+
+.close-discussion-button:hover {
+	background-color: #DC0000;
+	color: white;
+}
+
+.comments {
+	border-bottom: 1px solid #B000DE;
+	color: white;
+	margin: 15px 5px;
+	padding: 5px;
+	font-family: 'Nunito';
+}
+
+.extra-div {
+	height: 100px;
+}
+
+.comment-user {
+	font-size: 13px;
+}
+
+.comment {
+	font-family: 'Nunito';
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+.comment-input {
+	position: fixed;
+	bottom: 15px;
+	float: left;
+	margin: 5px;
+	padding: 5px;
+	margin-bottom: 25px;
+	font-family: 'Nunito';
+	font-size: 15px;
+	resize: none;
+	outline: none;
+	height: 30px;
+	line-height: 30px;
+	width: 88%;
+	border: 1px solid white;
+	background-color: transparent;
+	color: white;
+	transition-duration: 0.2s;
+}
+
+.comment-input:focus {
+	border: none;
+	box-shadow: 0px 0px 10px #0060D7;
+}
+
+.comment-submit-button {
+	position: fixed;
+	bottom: 35px;
+	right: 5px;
+	margin: 5px;
+	height: 42px;
+	width: 9%;
+	outline: none;
+	border: 1px solid #007DAE;
+	color: #007DAE;
+	background-color: transparent;
+	cursor: pointer;
+	transition-duration: 0.7s;
+}
+
+.comment-submit-button:hover {
+	background-color: #007DAE;
+	color: white;
+}
+
+.comment-disabled {
+	text-align: center;
+	font-size: 20px;
+}

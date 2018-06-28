@@ -1,27 +1,30 @@
 .short-announcements {
-	width: 23%;
+	float: left;
+	width: 330px;
 	font-family: 'Nunito';
-	border: 1px solid black;
-	box-shadow: 1px 1px 1px black;
-	margin-left: 2px;
+	border: 1px solid white;
+	box-shadow: 1px 1px 1px white;
+	margin: 2px;
+	padding: 2px;
 }
 
 .short-announcements-title {
 	height: 35px;
+	width: 95%;
+	line-height: 35px;
 	padding: 5px;
 	font-size: 20px;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid white;
 	text-align: center;
 }
 
 .short-announcement {
-	height: 30px;
+	min-height: 30px;
 	margin: 4px;
 	padding: 5px;
-	padding-left: 15px;
-	border-left: 5px solid blue;
+	border-bottom: 1px solid blue;
 	word-wrap: break-word;
-	background-color: #F0F0F0;
+	line-height: 30px;
 }
 
 .more-announcement-button {
@@ -33,13 +36,11 @@
 	cursor: pointer;
 }
 
-.more-announcement-button a {
-	color: black;
+.more-announcement-button {
+	color: white;
 	text-decoration: none;
-	transition-duration: 0.4s;
 }
 
-.more-announcement-button a:hover {
-	color: blue;
+.more-announcement-button:hover {
 	text-decoration: underline;
 }

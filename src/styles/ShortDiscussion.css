@@ -1,0 +1,19 @@
+.short-discussion {
+	margin: 5px;
+	padding: 5px;
+	font-family: 'Nunito';
+	cursor: pointer;
+	border-bottom: 1px solid #33CC00;
+	color: white;
+}
+
+.short-discussion-title {
+	font-size: 18px;
+	margin-bottom: 2px;
+	word-wrap: break-word;
+}
+
+.short-discussion-creator, .short-discussion-created-on {
+	font-size: 12px;
+	word-wrap: break-word;
+}
