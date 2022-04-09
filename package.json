@@ -9,7 +9,7 @@
 		"electron": "^2.0.18",
 		"firebase": "^5.11.1",
 		"history": "^4.10.1",
-		"moment": "^2.24.0",
+		"moment": "^2.29.2",
 		"rc-progress": "^2.5.2",
 		"react": "^16.9.0",
 		"react-datepicker": "^1.8.0",
